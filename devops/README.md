@@ -27,14 +27,7 @@ and, visit http://localhost:80
 > sudo chown -R $USER:$USER ./src
 > ```
 
-
-2. Test if everything is ok
-> ```sh
-> sudo docker run -p 8000:8000 -it docker.io/silvafigueiredo/laravel artisan serve --host=0.0.0.0
-> ```
-> and visit http://localhost:8000 to see if laravel is up
-
-3. Run migrations and key generation
+2. Run migrations and key generation
 > ```sh
 > sudo docker exec -it app sh
 > ```
