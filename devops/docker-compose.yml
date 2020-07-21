@@ -26,6 +26,7 @@ services:
     app:
         build: .
         container_name: app
+        entrypoint: dockerize -wait tcp://db:3306 -timeout 40s /entrypoint.sh
         volumes:
             - ./src:/var/www
         expose: 
@@ -34,6 +35,7 @@ services:
             - app-network
         depends_on: 
             - db
+            - redis
 
     db:
         image: mysql:5.7.22
